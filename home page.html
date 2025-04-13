@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn In Flash</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      width: 240px;
+      background: linear-gradient(180deg, #a3c8ff, #e1f1fe);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sidebar img {
+      max-width: 200px; /* Make logo bigger */
+      margin-left: -8px; /* Align logo to the left */
+    }
+    .nav-menu {
+      flex-grow: 1;
+      margin-top: 20px;
+    }
+    .nav-link {
+      color: #000;
+      padding: 10px 0;
+      margin-bottom: 6px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      color: #fff;
+      background-color: #3386cc;
+      border-radius: 8px;
+      padding-left: 10px;
+    }
+    .nav-link i {
+      margin-right: 10px;
+    }
+    .main {
+      margin-left: 260px;
+      padding: 30px 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .card-class {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      background-color: #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-class:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      background-color: #3386cc;
+      border-color: #3386cc;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #2271a0;
+      border-color: #2271a0;
+    }
+    .card-title {
+      color: #3386cc;
+    }
+    .card-body {
+      padding: 30px;
+    }
+    .stats-card {
+      background: linear-gradient(135deg, #5c8fdb, #81a7f2);
+      color: #fff;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .stats-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .stats-card h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .stats-card p {
+      font-size: 1.25rem;
+    }
+    .d-flex > div {
+      margin-left: 10px;
+    }
+
+    /* Profile Icon Styling */
+    .profile-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #6c85f2, #3f63f2); /* Gradient background */
+      color: white;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-icon i {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar text-start">
+    <div class="text-left">
+      <img src="img/logo.png" alt="Learn In Flash Logo" class="img-fluid mb-3">
+    </div>
+
+    <div class="nav-menu">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-house-door-fill"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-person-circle"></i>Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-journal-bookmark-fill"></i>Classes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-people-fill"></i>Friends</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-gear-fill"></i>Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-question-circle-fill"></i>Help</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="logout">
+      <a class="nav-link text-danger" href="#"><i class="bi bi-box-arrow-right"></i>Log Out</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Top right profile icon -->
+    <div class="d-flex justify-content-end align-items-center mb-4">
+      <button class="btn btn-outline-secondary rounded-circle profile-icon">
+        <i class="bi bi-person-circle fs-5"></i>
+      </button>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4>Welcome back, [User Name]</h4>
+      <span id="current-time" class="text-muted"></span>
+    </div>
+
+    <!-- Quick Stats Panel -->
+    <div class="row mb-4">
+      <div class="col-md-3">
+        <div class="stats-card">
+          <h4>Lessons Added</h4>
+          <p>12</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stats-card">
+          <h4>Lessons Reviewed</h4>
+          <p>34</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stats-card">
+          <h4>Total Study Time</h4>
+          <p>5 hrs 42 min</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stats-card">
+          <h4>Streak</h4>
+          <p>10 days</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Continue Where You Left Off -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4>Continue Where You Left Off</h4>
+      <button class="btn btn-primary"><i class="bi bi-arrow-right-circle-fill"></i> Continue Studying</button>
+    </div>
+
+    <!-- Your Classes -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4>Your Classes</h4>
+      <button class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add Class</button>
+    </div>
+
+    <!-- Example class cards -->
+    <div class="card-class">
+      <h5>Math 101</h5>
+      <p>Basic Algebra and Geometry</p>
+    </div>
+
+    <div class="card-class">
+      <h5>Science 102</h5>
+      <p>Introduction to Biology</p>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Display current date/time
+    setInterval(function() {
+      var currentTime = new Date();
+      document.getElementById('current-time').innerHTML = currentTime.toLocaleString();
+    }, 1000);
+  </script>
+</body>
+</html>
