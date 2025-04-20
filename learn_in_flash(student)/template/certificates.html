@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates</title>
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="brand-subtitle">Learn In Flash</span>
+            </div>
+            <nav>
+                <a href="/template/profile.html"><i class="fas fa-user"></i> Profile</a>
+                <a href="/template/dashboard.html"><i class="fas fa-home"></i> Home</a>
+                <a href="/template/my_courses.html"><i class="fas fa-book"></i> My Courses</a>
+                <a href="/template/statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a href="/template/test.html"><i class="fas fa-tasks"></i> Tests</a>
+                <a href="/template/achievements.html"><i class="fas fa-trophy"></i> Achievements</a>
+                <a href="#" class="active"><i class="fas fa-certificate"></i> Certificates</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="showLogoutModal()" class="logout-button"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="certificate-container">
+                <h1>My Certificates</h1>
+                <p>Here are the certificates for the courses you have completed:</p>
+                <div class="course-cards">
+                    <!-- Enhanced Certificate Card -->
+                    <div class="course-card">
+                        <img src="../img/Java.png" alt="Certificate">
+                        <div class="content">
+                            <h3>Advanced JavaScript</h3>
+                            <p class="author">Instructor: Jane Smith</p>
+                            <p class="duration">Completed on: 2023-09-15</p>
+                            <span class="card-badge">Completed</span>
+                            <a href="/template/certificate_modal.html" class="download-button">Download Certificate</a>
+                        </div>
+                    </div>
+                    <!-- Repeat for other certificates -->
+                    <div class="course-card">
+                        <img src="../img/python.png" alt="Certificate">
+                        <div class="content">
+                            <h3>Python for Data Science</h3>
+                            <p class="author">Instructor: John Doe</p>
+                            <p class="duration">Completed on: 2023-08-20</p>
+                            <span class="card-badge">Completed</span>
+                            <a href="certificate-download-link.pdf" class="download-button">Download Certificate</a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/appdev.jpeg" alt="Certificate">
+                        <div class="content">
+                            <h3>React Development</h3>
+                            <p class="author">Instructor: Sarah Lee</p>
+                            <p class="duration">Completed on: 2023-07-10</p>
+                            <span class="card-badge">Completed</span>
+                            <a href="certificate-download-link.pdf" class="download-button">Download Certificate</a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/angular.jpeg" alt="Certificate">
+                        <div class="content">
+                            <h3>React Development</h3>
+                            <p class="author">Instructor: Sarah Lee</p>
+                            <p class="duration">Completed on: 2023-07-10</p>
+                            <span class="card-badge">Completed</span>
+                            <a href="certificate-download-link.pdf" class="download-button">Download Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLogoutModal()">&times;</span>
+            <h2>Logout Successful</h2>
+            <p>You have successfully logged out.</p>
+            <button class="cta-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('logoutModal');
+            if (e.target === modal) {
+                closeLogoutModal();
+            }
+        });
+    </script>
+</body>
+</html>

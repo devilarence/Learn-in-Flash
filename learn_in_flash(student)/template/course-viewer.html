@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Java</title>
+    <link rel="stylesheet" href="/static/course-viewer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background: var(--white);
+            margin: 15% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cancel-button, .confirm-button {
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cancel-button {
+            background: var(--gray-light);
+            color: var(--text);
+        }
+
+        .confirm-button {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .confirm-button:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="course-viewer">
+        <div class="course-header">
+            <div class="breadcrumb">
+                <a href="/template/dashboard.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            </div>
+            <h1>Learn Java</h1>
+            <p>Learn to code in Java — a robust programming language used to create software, web and mobile apps, and more.</p>
+            <div class="action-buttons">
+                <button class="resume-button"><i class="fas fa-play"></i> Resume course</button>
+                <button class="practice-button"><i class="fas fa-dumbbell"></i> Start practice session</button>
+            </div>
+        </div>
+
+        <div class="course-meta">
+            <div class="course-details">
+                <div class="detail-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Earn a certificate of completion</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <div class="detail-content">
+                        <span class="detail-label">Projects</span>
+                        <strong>14</strong>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-book"></i>
+                    <div class="detail-content">
+                        <span class="detail-label">Lessons</span>
+                        <strong>16</strong>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Beginner friendly</span>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-header">
+                    <h2>Course Progress</h2>
+                    <button class="reset-progress" onclick="showResetModal()"><i class="fas fa-redo"></i> Reset progress</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-track">
+                        <div class="progress-fill progress-35"></div>
+                    </div>
+                    <span class="progress-text">35% Complete</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-content">
+            <div class="content-header">
+                <h2>Course Content</h2>
+                <div class="content-stats">
+                    <span><i class="fas fa-clock"></i> Total Duration: 24 hours</span>
+                    <span><i class="fas fa-book-open"></i> 12 chapters</span>
+                </div>
+            </div>
+
+            <div class="modules-list">
+                <!-- Module 1 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-status completed">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="module-title">Hello World</h3>
+                        <div class="module-info">
+                            <span class="completion-status">Completed</span>
+                            <span class="lesson-count">5 concepts</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-item completed">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="lesson-content">
+                                <div class="lesson-title">Lesson: Hello World</div>
+                                <div class="lesson-duration">15 minutes</div>
+                            </div>
+                            <div class="lesson-status">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-item completed">
+                            <div class="lesson-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="lesson-content">
+                                <div class="lesson-title">Article: Java Program Structure</div>
+                                <div class="lesson-duration">10 minutes</div>
+                            </div>
+                            <div class="lesson-status">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-item completed">
+                            <div class="lesson-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="lesson-content">
+                                <div class="lesson-title">Quiz: Hello World</div>
+                                <div class="lesson-duration">5 minutes</div>
+                            </div>
+                            <div class="lesson-status">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-status completed">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="module-title">1. Introduction to Java</h3>
+                        <div class="module-info">
+                            <span class="completion-status">Completed</span>
+                            <span class="lesson-count">2 lessons</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-item completed">
+                            <div class="lesson-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="lesson-content">
+                                <div class="lesson-title">Getting Started with Java</div>
+                                <div class="lesson-duration">15 min</div>
+                            </div>
+                            <div class="lesson-status">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="lesson-item completed">
+                            <div class="lesson-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="lesson-content">
+                                <div class="lesson-title">Basic Syntax</div>
+                                <div class="lesson-duration">20 min</div>
+                            </div>
+                            <div class="lesson-status">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-status in-progress">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3>2. Variables and Data Types</h3>
+                        <span class="module-progress">60%</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-item completed">
+                            <div class="lesson-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Understanding Variables</span>
+                            <span class="duration">25 min</span>
+                        </div>
+                        <div class="lesson-item current">
+                            <div class="lesson-icon">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <span>Data Types in Java</span>
+                            <span class="duration">30 min</span>
+                        </div>
+                        <div class="lesson-item locked">
+                            <div class="lesson-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <span>Type Conversion</span>
+                            <span class="duration">20 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-resources">
+            <h2>Course Resources</h2>
+            <div class="resources-grid">
+                <a href="#" class="resource-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Course Materials</span>
+                </a>
+                <a href="#" class="resource-card">
+                    <i class="fas fa-code"></i>
+                    <span>Code Examples</span>
+                </a>
+                <a href="#" class="resource-card">
+                    <i class="fas fa-tasks"></i>
+                    <span>Practice Exercises</span>
+                </a>
+                <a href="#" class="resource-card">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Progress Modal -->
+    <div id="resetModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeResetModal()">&times;</span>
+            <h2>Reset Progress</h2>
+            <p>Are you sure you want to reset your course progress? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="cancel-button" onclick="closeResetModal()">Cancel</button>
+                <button class="confirm-button" onclick="confirmReset()">Reset Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showResetModal() {
+            document.getElementById('resetModal').style.display = 'block';
+        }
+
+        function closeResetModal() {
+            document.getElementById('resetModal').style.display = 'none';
+        }
+
+        function confirmReset() {
+            // Add your reset logic here
+            alert('Progress has been reset');
+            closeResetModal();
+            // Update progress bar to 0%
+            document.querySelector('.progress-fill').style.width = '0%';
+            document.querySelector('.progress-text').textContent = '0% Complete';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('resetModal');
+            if (event.target == modal) {
+                closeResetModal();
+            }
+        }
+    </script>
+</body>
+</html>

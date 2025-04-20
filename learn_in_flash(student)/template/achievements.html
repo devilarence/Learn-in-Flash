@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Learn In Flash</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+
+        .achievements-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .achievement-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-card i {
+            font-size: 3rem;
+            color:#1d4ed8;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .achievement-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+       
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            background-color: #1d4ed8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #153e75;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="brand-subtitle">Learn In Flash</span>
+            </div>
+            <nav>
+                <a href="/template/profile.html"><i class="fas fa-user"></i> Profile</a>
+                <a href="/template/dashboard.html"><i class="fas fa-home"></i> Home</a>
+                <a href="/template/my_courses.html"><i class="fas fa-book"></i> My Courses</a>
+                <a href="/template/statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a href="/template/test.html"><i class="fas fa-tasks"></i> Tests</a>
+                <a href="/template/achievements.html" class="active"><i class="fas fa-trophy"></i> Achievements</a>
+                <a href="/template/certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="showLogoutModal()" class="logout-button"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="hero-section">
+                <h1>Your Achievements</h1>
+                <p>Celebrate your milestones and accomplishments.</p>
+            </div>
+            <div class="achievements-section">
+                <div class="achievement-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Beginner Badge</h3>
+                    <p>Completed your first course.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Consistent Learner</h3>
+                    <p>Logged in for 7 consecutive days.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Top Performer</h3>
+                    <p>Scored 90% or above in a test.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Master of Courses</h3>
+                    <p>Completed 10 courses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLogoutModal()">&times;</span>
+            <h2>Logout Successful</h2>
+            <p>You have successfully logged out.</p>
+            <button class="cta-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('logoutModal');
+            if (e.target === modal) {
+                closeLogoutModal();
+            }
+        });
+    </script>
+</body>
+</html>

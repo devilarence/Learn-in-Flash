@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="/static/my_courses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="brand-subtitle">Learn In Flash</span>
+            </div>
+            <nav>
+                <a href="/template/profile.html"><i class="fas fa-user"></i> Profile</a>
+                <a href="/template/dashboard.html"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="active"><i class="fas fa-book"></i> My Courses</a>
+                <a href="/template/statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a href="/template/test.html"><i class="fas fa-tasks"></i> Tests</a>
+                <a href="/template/achievements.html"><i class="fas fa-trophy"></i> Achievements</a>
+                <a href="/template/certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="showLogoutModal()" class="logout-button"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="hero-section">
+                <h1>My Courses</h1>
+                <p>Track your progress and continue learning.</p>
+            </div>
+            <div class="section">
+                <h2>Ongoing Courses</h2>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <img src="/img/Java.png" alt="Java Programming">
+                        <div class="content">
+                            <div>
+                                <h3>Java Programming</h3>
+                                <p class="author">Teacher: Shirad Petty</p>
+                                <div class="progress-bar">
+                                    <div class="progress progress-65"></div>
+                                </div>
+                                <p class="progress-text">65% Complete</p>
+                            </div>
+                            <a href="/template/course-viewer.html" class="card-button">
+                                Continue Learning <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/webdeb.jpeg" alt="Web Development">
+                        <div class="content">
+                            <div>
+                                <h3>Web Development</h3>
+                                <p class="author">Teacher: Dann Petty</p>
+                                <div class="progress-bar">
+                                    <div class="progress progress-45"></div>
+                                </div>
+                                <p class="progress-text">45% Complete</p>
+                            </div>
+                            <a href="/template/course-viewer.html" class="card-button">
+                                Continue Learning <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Completed Courses</h2>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <img src="/img/python.png" alt="Python Programming">
+                        <div class="content">
+                            <div>
+                                <h3>Python Programming</h3>
+                                <p class="author">Teacher: Alex Johnson</p>
+                                <p class="progress-text">Completed</p>
+                            </div>
+                            <button onclick="location.href='certificates.html'" class="enroll-button">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/angular.jpeg" alt="Angular Development">
+                        <div class="content">
+                            <div>
+                                <h3>Angular Development</h3>
+                                <p class="author">Teacher: Sarah Lee</p>
+                                <p class="progress-text">Completed</p>
+                            </div>
+                            <button class="enroll-button">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLogoutModal()">&times;</span>
+            <h2>Logout Successful</h2>
+            <p>You have successfully logged out.</p>
+            <button class="cta-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('logoutModal');
+            if (e.target === modal) {
+                closeLogoutModal();
+            }
+        });
+    </script>
+</body>
+</html>

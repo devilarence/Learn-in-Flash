@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Learn In Flash</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="brand-subtitle">Learn In Flash</span>
+            </div>
+            <nav>
+                <a href="/template/profile.html"><i class="fas fa-user"></i> Profile</a>
+                <a href="/template/dashboard.html"><i class="fas fa-home"></i> Home</a>
+                <a href="/template/my_courses.html"><i class="fas fa-book"></i> My Courses</a>
+                <a href="#" class="active"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a href="/template/test.html"><i class="fas fa-tasks"></i> Tests</a>
+                <a href="/template/achievements.html"><i class="fas fa-trophy"></i> Achievements</a>
+                <a href="/template/certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="showLogoutModal()" class="logout-button"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="hero-section">
+                <h1>Your Learning Statistics</h1>
+                <p>Track your progress and achievements</p>
+            </div>
+            <div class="stats-overview">
+                <div class="overview-card">
+                    <h3>Completed Courses</h3>
+                    <p class="stat-number">12</p>
+                </div>
+                <div class="overview-card">
+                    <h3>In Progress</h3>
+                    <p class="stat-number">3</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Total Hours</h3>
+                    <p class="stat-number">156</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Certificates Earned</h3>
+                    <p class="stat-number">8</p>
+                </div>
+            </div>
+            <div class="performance-section">
+                <h2>Performance by Subject</h2>
+                <div class="performance-graph">
+                    <div class="graph-info">
+                        <div class="graph-scale">
+                            <span>100%</span>
+                            <span>75%</span>
+                            <span>50%</span>
+                            <span>25%</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="graph-bars">
+                            <div class="graph-bar">
+                                <div class="bar-fill height-85">
+                                    <span class="bar-value">85%</span>
+                                </div>
+                                <span class="bar-label">Algorithm</span>
+                                <span class="teacher-name">Prof. Cris</span>
+                            </div>
+                            <div class="graph-bar">
+                                <div class="bar-fill height-92">
+                                    <span class="bar-value">92%</span>
+                                </div>
+                                <span class="bar-label">Object Prog.</span>
+                                <span class="teacher-name">Prof. Lucy</span>
+                            </div>
+                            <div class="graph-bar">
+                                <div class="bar-fill height-78">
+                                    <span class="bar-value">78%</span>
+                                </div>
+                                <span class="bar-label">Database</span>
+                                <span class="teacher-name">Prof. lucy</span>
+                            </div>
+                            <div class="graph-bar">
+                                <div class="bar-fill height-88">
+                                    <span class="bar-value">88%</span>
+                                </div>
+                                <span class="bar-label">Web Dev</span>
+                                <span class="teacher-name">Prof. </span>
+                            </div>
+                            <div class="graph-bar">
+                                <div class="bar-fill height-74">
+                                    <span class="bar-value">74%</span>
+                                </div>
+                                <span class="bar-label">Machine L.</span>
+                                <span class="teacher-name">Dr. Brown</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-section">
+                <h2>Upcoming Events</h2>
+                <div class="event-card">
+                    <h3>Electronics Lesson</h3>
+                    <p>10:00 - 11:30 AM</p>
+                </div>
+                <div class="event-card">
+                    <h3>Robotics Lesson</h3>
+                    <p>12:00 - 1:30 PM</p>
+                </div>
+                <div class="event-card">
+                    <h3>C++ Lesson</h3>
+                    <p>2:00 - 3:30 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLogoutModal()">&times;</span>
+            <h2>Logout Successful</h2>
+            <p>You have successfully logged out.</p>
+            <button class="cta-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('logoutModal');
+            if (e.target === modal) {
+                closeLogoutModal();
+            }
+        });
+    </script>
+</body>
+</html>

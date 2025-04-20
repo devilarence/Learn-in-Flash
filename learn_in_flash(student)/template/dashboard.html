@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn In Flash</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="brand-subtitle">Learn In Flash</span>
+            </div>
+            <nav> 
+                <a href="/template/profile.html"><i class="fas fa-user"></i> <span>Profile</span></a>
+                <a href="#" class="active"><i class="fas fa-home"></i> <span>Home</span></a>
+                <a href="/template/my_courses.html"><i class="fas fa-book"></i> <span>My Courses</span></a>
+                <a href="/template/statistics.html"><i class="fas fa-chart-bar"></i> <span>Statistics</span></a>
+                <a href="/template/test.html"><i class="fas fa-tasks"></i> <span>Tests</span></a>
+                <a href="/template/achievements.html"><i class="fas fa-trophy"></i> <span>Achievements</span></a>
+                <a href="/template/certificates.html"><i class="fas fa-certificate"></i> <span>Certificates</span></a>
+                <button onclick="showLogoutModal()" class="logout-button"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="hero-section">
+                <h1>Welcome to Learn In Flash</h1>
+                <p>Your personalized study hub to master any subject.</p>
+                <button class="cta-button">Start Learning</button>
+            </div>
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search for Knowledge">
+            </div>
+            <div class="categories">
+                <button>Design</button>
+                <button>Marketing</button>
+                <button>Business</button>
+                <button>Software</button>
+                <button>Animation</button>
+                <button>Bootstrap</button>
+            </div>
+            <div class="section">
+                <h2>Running Course</h2>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <img src="/img/Java.png" alt="Java Programming">
+                        <div class="content">
+                            <div>
+                                <h3>Java Programming</h3>
+                                <p class="author">Teacher: Shirad Petty</p>
+                                <div class="progress-bar">
+                                    <div class="progress progress-65"></div>
+                                </div>
+                                <p class="progress-text">65% Complete</p>
+                            </div>
+                            <a href="/template/course-viewer.html" class="card-button">
+                                Continue Learning <i class="fas fa-arrow-right"></i>
+                            </a>
+                        
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/webdeb.jpeg" alt="web development">
+                        <div class="content">
+                            <div>
+                                <h3>Web Development</h3>
+                                <p class="author">Teacher: Dann Petty</p>
+                                <div class="progress-bar">
+                                    <div class="progress progress-45"></div>
+                                </div>
+                                <p class="progress-text">45% Complete</p>
+                            </div>
+                            <a href="/template/course-viewer.html" class="card-button">
+                                Continue Learning <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Newest Courses</h2>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <img src="/img/bootstrap.jpeg" alt="Bootstrap">
+                        <div class="content">
+                            <div>
+                                <h3>Learn Bootstrap</h3>
+                                <p class="price">FREE</p>
+                            </div>
+                            <button onclick="location.href='enroll.html'" class="enroll-button">
+                                <i class="fas fa-plus-circle"></i>
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/ui.jpeg" alt="UI/UX Design">
+                        <div class="content">
+                            <div>
+                                <h3>UI/UX Design</h3>
+                                <p class="price">FREE</p>
+                            </div>
+                            <button class="enroll-button">
+                                <i class="fas fa-plus-circle"></i>
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/python.png" alt="Python Programming">
+                        <div class="content">
+                            <div>
+                                <h3>Python Programming</h3>
+                                <p class="price">FREE</p>
+                            </div>
+                            <button class="enroll-button">
+                                <i class="fas fa-plus-circle"></i>
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/img/angular.jpeg" alt="Angular Development">
+                        <div class="content">
+                            <div>
+                                <h3>Angular Development</h3>
+                                <p class="price">FREE</p>
+                            </div>
+                            <button class="enroll-button">
+                                <i class="fas fa-plus-circle"></i>
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLogoutModal()">&times;</span>
+            <h2>Logout Successful</h2>
+            <p>You have successfully logged out.</p>
+            <button class="cta-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const sidebar = document.querySelector('.sidebar');
+            const navMenu = document.querySelector('.nav-menu');
+            sidebar.classList.toggle('nav-open');
+            navMenu.classList.toggle('show');
+        }
+
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('logoutModal');
+            if (e.target === modal) {
+                closeLogoutModal();
+            }
+        });
+    </script>
+</body>
+</html>

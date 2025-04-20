@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <link rel="stylesheet" href="/static/certificate.css">
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="certificate">
+            <div class="certificate-header">
+                <h1>Certificate of Completion</h1>
+                <p>Presented to</p>
+                <h2>Devila Lourence M.</h2>
+            </div>
+            <div class="certificate-body">
+                <p>For successfully completing the course</p>
+                <h3>Java Programming</h3>
+                <p>with outstanding performance and dedication.</p>
+            </div>
+            <div class="certificate-footer">
+                <p>Issued on: <strong>March 15, 2023</strong></p>
+                <button class="download-button" onclick="downloadCertificate()">Download Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadCertificate() {
+            const link = document.createElement('a');
+            link.href = 'path/to/certificate.pdf'; // Replace with the actual path to the certificate file
+            link.download = 'Certificate.pdf';
+            link.click();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Test</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .test-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .question {
+            margin-bottom: 2rem;
+        }
+
+        .question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gray-light);
+            padding: 0.8rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color var(--transition);
+        }
+
+        .options label:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .options input[type="radio"] {
+            accent-color: var(--primary);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .modal-content {
+            position: relative;
+        }
+
+        .modal h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-body p {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: color var(--transition);
+        }
+
+        .close-button:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: auto;
+                padding: 0.5rem;
+                z-index: 1000;
+            }
+            .sidebar-header, .sidebar-footer {
+                display: none;
+            }
+            .sidebar nav {
+                flex-direction: row;
+                justify-content: space-around;
+                margin: 0;
+                gap: 5px;
+            }
+            .sidebar a {
+                padding: 10px;
+                margin: 0;
+                font-size: 12px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .sidebar a i {
+                width: auto;
+                margin-bottom: 4px;
+            }
+            .main-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 1rem;
+                margin-bottom: 80px;
+            }
+            .hero-section {
+                margin: 0.5rem;
+                padding: 1.5rem 1rem;
+                text-align: center;
+            }
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            .test-form {
+                width: 100%;
+                padding: 1rem;
+            }
+            .question h3 {
+                font-size: 1rem;
+            }
+            .options label {
+                font-size: 0.9rem;
+                padding: 0.6rem 0.8rem;
+            }
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+            .modal {
+                width: 90%;
+                padding: 1.5rem;
+            }
+
+            .modal h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+            }
+        }
+
+        .sidebar {
+            overflow-y: auto; /* Enable scrolling for the sidebar */
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="brand-subtitle">Learn In Flash</span>
+            </div>
+            <nav>
+                <a href="/template/dashboard.html"><i class="fas fa-home"></i> Home</a>
+                <a href="/template/my_courses.html"><i class="fas fa-book"></i> My Courses</a>
+                <a href="/template/statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a href="/template/test.html" class="active"><i class="fas fa-tasks"></i> Tests</a>
+                <a href="/template/achievements.html"><i class="fas fa-trophy"></i> Achievements</a>
+                <a href="/template/certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="showLogoutModal()" class="logout-button"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="hero-section">
+                <h1>Java Programming Test</h1>
+                <p>Test your knowledge of Java programming concepts.</p>
+            </div>
+            <div class="section">
+                <h2>Questions</h2>
+                <form class="test-form" id="testForm">
+                    <!-- Question 1 -->
+                    <div class="question">
+                        <h3>1. What is the correct way to declare a variable in Java?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> <code>int x = 10;</code></label>
+                            <label><input type="radio" name="q1" value="b"> <code>var x = 10;</code></label>
+                            <label><input type="radio" name="q1" value="c"> <code>x = 10;</code></label>
+                            <label><input type="radio" name="q1" value="d"> <code>declare x = 10;</code></label>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <div class="question">
+                        <h3>2. Which of the following is not a Java keyword?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> <code>static</code></label>
+                            <label><input type="radio" name="q2" value="b"> <code>void</code></label>
+                            <label><input type="radio" name="q2" value="c"> <code>main</code></label>
+                            <label><input type="radio" name="q2" value="d"> <code>class</code></label>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <div class="question">
+                        <h3>3. What is the size of an <code>int</code> in Java?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> 8 bits</label>
+                            <label><input type="radio" name="q3" value="b"> 16 bits</label>
+                            <label><input type="radio" name="q3" value="c"> 32 bits</label>
+                            <label><input type="radio" name="q3" value="d"> 64 bits</label>
+                        </div>
+                    </div>
+                    <!-- Question 4 -->
+                    <div class="question">
+                        <h3>4. Which of the following is used to create an object in Java?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> <code>new</code></label>
+                            <label><input type="radio" name="q4" value="b"> <code>create</code></label>
+                            <label><input type="radio" name="q4" value="c"> <code>object</code></label>
+                            <label><input type="radio" name="q4" value="d"> <code>construct</code></label>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <div class="question">
+                        <h3>5. What is the default value of a <code>boolean</code> in Java?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> <code>true</code></label>
+                            <label><input type="radio" name="q5" value="b"> <code>false</code></label>
+                            <label><input type="radio" name="q5" value="c"> <code>0</code></label>
+                            <label><input type="radio" name="q5" value="d"> <code>null</code></label>
+                        </div>
+                    </div>
+                    <!-- Question 6 -->
+                    <div class="question">
+                        <h3>6. Which of the following is a valid Java class declaration?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> <code>public class MyClass { }</code></label>
+                            <label><input type="radio" name="q6" value="b"> <code>class MyClass { }</code></label>
+                            <label><input type="radio" name="q6" value="c"> <code>private class MyClass { }</code></label>
+                            <label><input type="radio" name="q6" value="d"> Both A and B</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="cta-button">Submit Test</button>
+                </form>
+            </div>
+
+            <!-- Result Modal -->
+            <div id="resultModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <h2>Test Results</h2>
+                    <div class="modal-body">
+                        <p id="score"></p>
+                        <p id="wrong"></p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="cta-button" id="viewMistakes">View Mistakes</button>
+                        <button class="cta-button" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLogoutModal()">&times;</span>
+            <h2>Logout Successful</h2>
+            <p>You have successfully logged out.</p>
+            <button class="cta-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('testForm');
+        const modal = document.getElementById('resultModal');
+        const scoreElement = document.getElementById('score');
+        const wrongElement = document.getElementById('wrong');
+        const viewMistakesButton = document.getElementById('viewMistakes');
+
+        const correctAnswers = {
+            q1: 'a',
+            q2: 'c',
+            q3: 'c',
+            q4: 'a',
+            q5: 'b',
+            q6: 'd'
+        };
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let score = 0;
+            let wrong = 0;
+            const mistakes = [];
+
+            const formData = new FormData(form);
+            for (const [question, answer] of Object.entries(correctAnswers)) {
+                if (formData.get(question) === answer) {
+                    score++;
+                } else {
+                    wrong++;
+                    mistakes.push(`Question ${question.slice(1)}: Correct answer is ${answer.toUpperCase()}`);
+                }
+            }
+
+            scoreElement.textContent = `Correct Answers: ${score}`;
+            wrongElement.textContent = `Wrong Answers: ${wrong}`;
+            modal.style.display = 'block';
+
+            viewMistakesButton.onclick = () => {
+                alert(mistakes.join('\n'));
+            };
+        });
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('logoutModal');
+            if (e.target === modal) {
+                closeLogoutModal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now</title>
+    <link rel="stylesheet" href="/static/enroll.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="enroll-container">
+        <div class="enroll-header">
+            <h1>Enroll in Course</h1>
+            <p>Fill in your details to join the course and start learning today!</p>
+        </div>
+        <div class="enroll-content landscape-layout">
+            <form class="enroll-form" onsubmit="showSuccessModal(event)">
+                <div class="form-group">
+                    <label for="student-name">Full Name</label>
+                    <input type="text" id="student-name" name="student-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student-id" placeholder="Enter your student ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Email Address</label>
+                    <input type="email" id="student-email" name="student-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-course">Course</label>
+                    <input type="text" id="student-course" name="student-course" placeholder="Enter your course" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-year">Year</label>
+                    <select id="student-year" name="student-year" required>
+                        <option value="" disabled selected>Select your year</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="course-name">Course Name</label>
+                    <input type="text" id="course-name" name="course-name" value="Bootstrap" readonly>
+                </div>
+                <button type="submit" class="enroll-button">
+                    <i class="fas fa-check-circle"></i> Enroll Now
+                </button>
+            </form>
+        </div>
+        <!-- Success Modal -->
+        <div id="success-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeSuccessModal()">&times;</span>
+                <h2>Enrollment Successful!</h2>
+                <p>You have successfully enrolled in the <strong>Bootstrap</strong> course.</p>
+                <button class="modal-button" onclick="location.href='dashboard.html'">OK</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSuccessModal(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('success-modal').style.display = 'block';
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
