@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Learning Platform</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <script defer src="/static/js.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Learn In Flash</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Sign In <i ></i></a>
+          <ul class="dropdown-menu">
+            <li class="menu-header">Login</li>
+            <li><a href="/template/stud_login.html"><i class="fas fa-user-graduate"></i> Student Login</a></li>
+            <li><a href="/template/teach_login.html"><i class="fas fa-chalkboard-teacher"></i> Teacher Login</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Sign Up <i ></i></a>
+            <ul class="dropdown-menu">
+              <li class="menu-header">Register</li>
+              <li><a href="stud_login.html"><i class="fas fa-user-plus"></i> Student Register</a></li>
+              <li><a href="teach_login.html"><i class="fas fa-user-tie"></i> Teacher Register</a></li>
+            </ul>
+        </li>
+      </ul>
+      <div class="mobile-menu-btn">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero scroll-animate fade-in flex flex-col-reverse lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-12" id="home">
+    <!-- Floating Icons -->
+    <div class="floating-icons absolute left-4 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">
+      <div class="floating-icon" title="24/7 Support"><i class="fas fa-headset"></i></div>
+      <div class="floating-icon" title="Smart Learning"><i class="fas fa-brain"></i></div>
+      <div class="floating-icon" title="Progress Tracking"><i class="fas fa-chart-line"></i></div>
+      <div class="floating-icon" title="Certified Courses"><i class="fas fa-certificate"></i></div>
+      <div class="floating-icon" title="Live Sessions"><i class="fas fa-video"></i></div>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="hero-text max-w-2xl text-center lg:text-left flex-1">
+      <div class="hero-badge mb-4">New Platform Now Live</div>
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">LEARN IN FLASH</h1>
+      <p class="hero-subtitle text-gray-700 mb-6">
+        Revolutionize your study sessions with our smart, interactive learning hub.
+        Whether you're a student or tutor, access customizable review tools, track progress,
+        and master lessons — anytime, anywhere.
+      </p>
+      <div class="cta-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <button class="btn-primary" onclick="location.href='auth.html'">
+          <i class="fas fa-rocket"></i> Get Started
+        </button>
+        <button class="btn-secondary">
+          <i class="fas fa-arrow-right"></i> Explore more
+        </button>
+      </div>
+      <div class="hero-stats mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="stat-item">
+          <div class="stat-number text-xl font-bold">50K+</div>
+          <div class="stat-label text-sm text-gray-500">Active Students</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number text-xl font-bold">200+</div>
+          <div class="stat-label text-sm text-gray-500">Expert Tutors</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number text-xl font-bold">1000+</div>
+          <div class="stat-label text-sm text-gray-500">Course Materials</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Illustration -->
+    <div class="illustration relative flex-1 max-w-md lg:max-w-xl w-full">
+      <img src="/img/bg.png" alt="Hero Illustration" class="main-image w-full h-auto object-contain" />
+      <div class="floating-elements absolute inset-0 pointer-events-none">
+        <div class="element bulb-icon absolute top-0 left-1/2 transform -translate-x-1/2"><i class="fas fa-lightbulb"></i></div>
+        <div class="element note-card absolute bottom-12 left-0"><i class="fas fa-book"></i></div>
+        <div class="element video-player absolute bottom-4 right-1/3"><i class="fas fa-play"></i></div>
+        <div class="element grad-cap absolute top-1/4 right-0"><i class="fas fa-graduation-cap"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services scroll-animate slide-up" id="features">
+    <h2>What You Can Do with Learn In Flash</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Custom Study Modes</h3>
+        <p>Review using flashcards, quizzes, fill-in-the-blanks, and more.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+        <h3>Progress Tracking</h3>
+        <p>Visual dashboards to track learning and improvement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+        <h3>Material Sharing</h3>
+        <p>Tutors can upload and share lessons in one click.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Flexible Inputs</h3>
+        <p>Paste notes, upload PDFs, or type directly to create study sets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process scroll-animate fade-in" id="how-it-works">
+    <h2>How It Works</h2>
+    <p>Using Learn In Flash is simple and powerful. Here's how:</p>
+    <div class="process-cards">
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-user-plus"></i></div>
+        <h3>Sign Up</h3>
+        <p>Join as a student or tutor with a quick registration.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-upload"></i></div>
+        <h3>Upload or Access</h3>
+        <p>Tutors upload material, students access lessons via shared links.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-brain"></i></div>
+        <h3>Choose Study Mode</h3>
+        <p>Pick from flashcards, quizzes, or custom challenges.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Track & Improve</h3>
+        <p>Visualize your progress and strengthen weak areas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agency Section -->
+  <section class="agency scroll-animate slide-up">
+    <h2>Why Choose Learn In Flash?</h2>
+    <div class="agency-cards">
+      <div class="agency-card">
+        <div class="agency-icon"><i class="fas fa-cogs"></i></div>
+        <h3>Adaptable Tools</h3>
+        <p>Study tools that adapt to your learning style.</p>
+      </div>
+      <div class="agency-card">
+        <div class="agency-icon"><i class="fas fa-user-friends"></i></div>
+        <h3>Built for Collaboration</h3>
+        <p>Tutors and students connect through shared content.</p>
+      </div>
+      <div class="agency-card">
+        <div class="agency-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Goal-Focused</h3>
+        <p>Turn your study time into an achievement-driven challenge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials scroll-animate fade-in">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>"Amazing service and great results!"</p>
+        <h3>John Doe</h3>
+      </div>
+      <div class="testimonial">
+        <p>"Highly recommend their marketing expertise."</p>
+        <h3>Jane Smith</h3>
+      </div>
+      <div class="testimonial">
+        <p>"Professional and reliable team."</p>
+        <h3>Mark Lee</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="auth-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="footer-logo">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Learn In Flash</span>
+        </div>
+        <p>Revolutionize your learning journey</p>
+      </div>
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="#">About</a>
+          <a href="#">Features</a>
+          <a href="#">Help</a>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

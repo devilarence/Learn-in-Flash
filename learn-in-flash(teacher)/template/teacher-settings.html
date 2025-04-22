@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | Learn In Flash</title>  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/dashboard.css"> 
+  <link rel="stylesheet" href="teachsett.css">
+  </head>
+<body>
+  <div class="sidebar">
+    <img src="img/logo.png" alt="Learn In Flash Logo">
+    <nav class="mt-4">
+      <a class="nav-link" href="home page.html"><i class="bi bi-house-door-fill me-2"></i>Home</a>
+      <a class="nav-link" href="teacher-profile.html"><i class="bi bi-person-circle me-2"></i>Account</a>
+      <a class="nav-link active" href="teacher-classes.html"><i class="bi bi-journal-bookmark-fill me-2"></i>Classes</a>
+      <a class="nav-link" href="teacher-fri.html"><i class="bi bi-people-fill me-2"></i>Friends</a>
+      <a class="nav-link" href="teacher-settings.html"><i class="bi bi-gear-fill me-2"></i>Settings</a>
+      <a class="nav-link" href="teacher-help.html"><i class="bi bi-question-circle-fill me-2"></i>Help</a>
+    </nav>
+    <a class="nav-link text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Log Out</a>
+  </div>  <main class="main-content">
+    <div class="d-flex justify-content-end">
+      <div class="profile-icon"><i class="bi bi-person-circle"></i></div>
+    </div><div class="d-flex justify-content-between align-items-center mb-3">
+  <h4>Settings</h4>
+  <span id="current-time" class="text-muted"></span>
+</div>
+
+<div class="settings-section">
+  <h5>Account Settings</h5>
+  <form>
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="fullName" value="John Doe">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" value="john@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="e.g. +1234567890">
+    </div>
+  </form>
+</div>
+
+<div class="settings-section">
+  <h5>Privacy & Verification</h5>
+  <form>
+    <div class="mb-3">
+      <label class="form-label">Two-Factor Authentication</label>
+      <select class="form-select">
+        <option selected>Enabled</option>
+        <option>Disabled</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="idUpload" class="form-label">Upload ID for Verification</label>
+      <input class="form-control" type="file" id="idUpload">
+      <div class="form-text">Accepted formats: PDF, PNG, JPG</div>
+    </div>
+  </form>
+</div>
+
+<div class="settings-section">
+  <h5>Preferences</h5>
+  <form>
+    <div class="mb-3">
+      <label for="language" class="form-label">Preferred Language</label>
+      <select class="form-select" id="language">
+        <option selected>English</option>
+        <option>Spanish</option>
+        <option>French</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="theme" class="form-label">Theme</label>
+      <select class="form-select" id="theme">
+        <option selected>Light</option>
+        <option>Dark</option>
+      </select>
+    </div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="notifications" checked>
+      <label class="form-check-label" for="notifications">
+        Enable Email Notifications
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit"><i class="bi bi-save"></i> Save Changes</button>
+  </form>
+</div>
+
+  </main>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  <script>
+    setInterval(() => {
+      document.getElementById('current-time').innerText = new Date().toLocaleString();
+    }, 1000);
+  </script></body>
+</html>
