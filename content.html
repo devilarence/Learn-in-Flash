@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn In Flash - Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/css/content.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div class="admin-info">
+      <img src="assets/img/admin.jpg" alt="Admin Profile" />
+      <div>Admin</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <a href="admindashboard.html">Dashboard</a>
+      <a href="usermanagement.html">User Management</a>
+      <a href="content.html" class="dashboard">Content Oversight</a>
+      <a href="report.html">Reports</a>
+      <a href="settings.html">Settings</a>
+      <a href="#">Support</a>
+    </nav>
+    <main>
+      <h2>Content Oversight</h2>
+      <div class="content-oversight">
+        <h3>Submitted Materials</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Content ID</th>
+              <th>Title</th>
+              <th>Subject</th>
+              <th>Type</th>
+              <th>Uploaded By</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#C001</td>
+              <td>Photosynthesis Notes</td>
+              <td>Biology</td>
+              <td>PDF</td>
+              <td>mr.jones@school.edu</td>
+              <td>2025-04-20</td>
+              <td>Pending</td>
+              <td>
+                <button class="approve-btn">Approve</button>
+                <button class="reject-btn">Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#C002</td>
+              <td>Algebra Drill Set</td>
+              <td>Math</td>
+              <td>Quiz</td>
+              <td>ms.kate@school.edu</td>
+              <td>2025-04-21</td>
+              <td>Approved</td>
+              <td>
+                <button class="approve-btn" disabled>Approve</button>
+                <button class="reject-btn">Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#C003</td>
+              <td>World War II Timeline</td>
+              <td>History</td>
+              <td>Text</td>
+              <td>mr.doe@school.edu</td>
+              <td>2025-04-21</td>
+              <td>Rejected</td>
+              <td>
+                <button class="approve-btn">Approve</button>
+                <button class="reject-btn" disabled>Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+    </main>
+  </div>
+</body>
+</html>

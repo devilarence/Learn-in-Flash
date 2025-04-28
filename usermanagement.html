@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn In Flash - Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/css/user.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div class="admin-info">
+      <img src="assets/img/admin.jpg" alt="Admin Profile" />
+      <div>Admin</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <a href="admindashboard.html">Dashboard</a>
+      <a href="usermanagement.html" class="dashboard">User Management</a>
+      <a href="content.html">Content Oversight</a>
+      <a href="report.html">Reports</a>
+      <a href="settings.html">Settings</a>
+      <a href="#">Support</a>
+    </nav>
+
+    <main>
+      <h2>User Management</h2>
+      <div class="user-management">
+        <h3>Teachers</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Subject</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jane Smith</td>
+              <td>jane@school.edu</td>
+              <td>Mathematics</td>
+              <td>Active</td>
+              <td><button class="verify-btn" disabled>Verified</button></td>
+            </tr>
+            <tr>
+              <td>Robert Johnson</td>
+              <td>robert@school.edu</td>
+              <td>Science</td>
+              <td>Pending Approval</td>
+              <td><a href="teacherverification.html"><button class="verify-btn">Verify</button></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem;">Students</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Year Level</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Emily Clark</td>
+              <td>emily@student.edu</td>
+              <td>Junior High</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>David Lee</td>
+              <td>david@student.edu</td>
+              <td>Senior High</td>
+              <td>Inactive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

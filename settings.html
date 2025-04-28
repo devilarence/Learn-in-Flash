@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn In Flash - Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/css/settingstyle.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div class="admin-info">
+      <img src="/assets/img/admin.jpg" alt="Admin Profile" />
+      <div>Admin</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <a href="admindashboard.html">Dashboard</a>
+      <a href="usermanagement.html">User Management</a>
+      <a href="content.html">Content Oversight</a>
+      <a href="report.html">Reports</a>
+      <a href="settings.html" class="setting">Settings</a>
+      <a href="#">Support</a>
+    </nav>
+
+    <main>
+      <h2>Settings</h2>
+      <div class="settings">
+        <h3>Account Settings</h3>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Admin123" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="admin@example.com" />
+
+        <label for="password">Change Password</label>
+        <input type="password" id="password" placeholder="New Password" />
+
+        <label for="theme">Dashboard Theme</label>
+        <select id="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+
+        <a href="settings.html"><button class="save">Save Changes</button></a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
